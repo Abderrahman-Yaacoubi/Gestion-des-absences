@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gestion de la justification"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#1F2121"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Details -->
+    <TextView
+        android:id="@+id/txtDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#626C7C"
+        android:layout_marginBottom="20dp"
+        android:lineSpacingExtra="4dp" />
+
+    <!-- Separator -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginBottom="16dp" />
+
+    <!-- View File Button -->
+    <Button
+        android:id="@+id/btnVoirJustification"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="📄 Voir le fichier"
+        android:textColor="@android:color/white"
+        android:background="#FF9800"
+        android:textSize="14sp"
+        android:layout_marginBottom="12dp"
+        android:visibility="visible" />
+
+    <!-- Validate Button -->
+    <Button
+        android:id="@+id/btnValider"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="✓ Valider l'absence"
+        android:textColor="@android:color/white"
+        android:background="#4CAF50"
+        android:textSize="14sp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Reject Button -->
+    <Button
+        android:id="@+id/btnRefuser"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="✗ Refuser l'absence"
+        android:textColor="@android:color/white"
+        android:background="#F44336"
+        android:textSize="14sp" />
+
+</LinearLayout>

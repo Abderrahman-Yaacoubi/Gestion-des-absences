@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Mon Profil" />
+
+        <item
+            android:id="@+id/nav_add_absence"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="Ajouter Absence" />
+
+        <item
+            android:id="@+id/nav_view_absences"
+            android:icon="@android:drawable/ic_menu_view"
+            android:title="Consulter Absences" />
+
+        <item
+            android:id="@+id/nav_all_absences"
+            android:icon="@android:drawable/ic_menu_sort_by_size"
+            android:title="Toutes les Absences" />
+    </group>
+
+    <item android:title="Autre">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@android:drawable/ic_lock_power_off"
+                android:title="Déconnexion" />
+        </menu>
+    </item>
+
+</menu>

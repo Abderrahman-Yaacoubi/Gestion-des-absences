@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/absence_item_background"
+    android:layout_margin="8dp">
+
+    <!-- Row 1: Matière + État -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/txtMatiere"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Matière"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#1F2121" />
+
+        <TextView
+            android:id="@+id/txtEtat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="État"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="#FF9800"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Row 2: Date + Seance -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Date: "
+            android:textSize="12sp"
+            android:textColor="#626C7C" />
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2024-12-10"
+            android:textSize="12sp"
+            android:textColor="#1F2121"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Row 3: Seance -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Séance: "
+            android:textSize="12sp"
+            android:textColor="#626C7C" />
+
+        <TextView
+            android:id="@+id/txtSeance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Séance 1"
+            android:textSize="12sp"
+            android:textColor="#1F2121"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Upload Button -->
+    <Button
+        android:id="@+id/btnUploadJustification"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="📤 Joindre justification"
+        android:textColor="@android:color/white"
+        android:background="#2196F3"
+        android:textSize="12sp"
+        android:visibility="visible" />
+
+</LinearLayout>
