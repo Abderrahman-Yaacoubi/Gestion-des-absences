@@ -15,32 +15,36 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
 import android.provider.OpenableColumns;
+import android.database.Cursor;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import android.provider.OpenableColumns;
+import android.database.Cursor;
+
+
 
 public class StudentActivity extends AppCompatActivity
         implements AbsenceAdapter.OnUploadClickListener {
-
     private static final int FILE_REQUEST_CODE = 100;
 
     TextView txtWelcome;
     RecyclerView recyclerAbsences;
     Button btnLogout;
     DBHelper db;
-
     ArrayList matieres, dates, etats, professeurs, seances;
     AbsenceAdapter adapter;
-
     int etudiantId;
     String etudiantNom;
     String groupe;
     String filiere;
 
     private int absencePositionEnCours;
+    private static final int PICK_FILE_REQUEST = 100;
     private Uri fichierUri;
 
     @Override
@@ -112,7 +116,10 @@ public class StudentActivity extends AppCompatActivity
         }
     }
 
+
+
     // ===== CHOOSE FILE =====
+// ===== CHOOSE FILE =====
     private void choisirFichier() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("*/*");
@@ -154,9 +161,6 @@ public class StudentActivity extends AppCompatActivity
                             "✓ Fichier sélectionné: " + fileName,
                             Toast.LENGTH_SHORT).show();
 
-                    // ✅ SHOW DIALOG TO SEND FILE
-                    showSendFileDialog();
-
                 } catch (IOException e) {
                     Toast.makeText(this,
                             "✗ Erreur lecture fichier: " + e.getMessage(),
@@ -191,18 +195,6 @@ public class StudentActivity extends AppCompatActivity
         return result;
     }
 
-    // ===== SHOW DIALOG TO CONFIRM SEND =====
-    private void showSendFileDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Envoyer la justification");
-        builder.setMessage("Êtes-vous sûr de vouloir envoyer ce fichier?");
-        builder.setPositiveButton("Envoyer", (dialog, which) -> {
-            envoyerJustification();
-        });
-        builder.setNegativeButton("Annuler", null);
-        builder.show();
-    }
-
     // ===== SEND FILE TO DATABASE =====
     private void envoyerJustification() {
         if (fichierUri == null) {
@@ -222,7 +214,7 @@ public class StudentActivity extends AppCompatActivity
                     matiere,
                     date,
                     "Justification uploadée",
-                    filePath, // ✅ Use file path
+                    filePath,  // ✅ Use file path
                     "En attente de validation"
             );
 
@@ -246,9 +238,11 @@ public class StudentActivity extends AppCompatActivity
         }
     }
 
+
     @Override
     public void onUploadClick(int position) {
         absencePositionEnCours = position;
+
         String etat = (String) etats.get(position);
 
         // ===== BLOCK IF VALIDATED =====
@@ -284,6 +278,7 @@ public class StudentActivity extends AppCompatActivity
             builder.show();
         }
     }
+
 
     @Override
     protected void onDestroy() {
